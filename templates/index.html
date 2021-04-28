@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/static/asdf.css">
+</head>
+
+<body class="plots">
+    <div class="container">
+        <div class="row center">
+            <div class="smith col- mt-5">
+                <img src="/static/smith.jpg" alt="bg img" width="500px">
+            </div>
+        </div>
+        <div class="row center">
+            <div class="col- m-5">
+                <form class="search" action="/analysis" method="post">
+                    <input
+                        type="text"
+                        class="rounded"
+                        placeholder="Tick List URL"
+                        name="url"
+                    />
+                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

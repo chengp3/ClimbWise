@@ -1,0 +1,23 @@
+body, html {background-color: #151515;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.smith {
+    padding: 0;
+}
+
+.center {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 1.5em;
+    color: #90A6BB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rounded {
+    border-radius: 10px;
+}

@@ -1,0 +1,170 @@
+.header { grid-area: header; }
+.analyze { grid-area: an; }
+.nav { grid-area: nav; }
+.plots { grid-area: plots; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'nav plots plots plots plots plots';
+  grid-gap: 1px;
+  /*between the elements*/
+  background-color: #fffefe;
+  padding: 0px;
+  /*just inside the borders*/
+  border-radius: 15px;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  overflow:hidden;
+  top: 60px;
+  height: 85%;
+  position: absolute;
+  
+  grid-template-rows: 100px
+}
+
+.grid-container > div {
+  text-align: center;
+  padding: 20px 0; 
+  /*Padding is used to create space around an element's content, inside of any defined borders.*/
+  font-size: 30px;
+  
+}
+
+html {
+  height: 100vh;
+  overflow: hidden
+}
+
+body {
+  background-color: black;
+  height: 100vh;
+  font-family: 'Nunito Sans', sans-serif;
+  padding: 0;
+  overflow: hidden;
+  margin: 0
+}
+
+.link-container {
+  margin: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.header {
+    height: 100px;
+    background-image: url("smith.jpg");
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.analyze {
+    align-items: right;
+}
+
+.search_field {
+    border-radius: 10px;
+    height: 25px;
+    width: 300px;
+    background-color: #fff;
+    color: rgb(53, 53, 53);
+    position: relative;
+    top: -20px;
+}
+
+.submit {
+  position: relative;
+  top: 7px;
+}
+
+.logo {
+    height: 120px; 
+    width: auto;
+    position: absolute;
+    left: 22px;
+}
+
+.transition {
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.transition:active {
+  transform: translateY(4px);
+}
+
+.transition:hover {opacity: 1}
+
+.nav {
+    border-radius: 0px;
+    width: 100px
+}
+
+.icon {
+    padding: 15px;
+    width: 40px;
+}
+
+.plots {
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg {
+  opacity:.1;
+  left: auto;
+  top: auto;
+  width: 100;
+  height: auto
+}
+
+.introtext {
+  font-family: Brush Script MT, cursive;
+  color: rgb(0, 0, 0);
+  font-size: xxx-large;
+  position: absolute;
+  left: auto;
+  top: auto;
+  width: 450px
+}
+
+.introimage {
+  background-image: url("summit.png");
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 200 auto;
+}
+
+.plot {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#chart10 { grid-area: chart10; }
+#chart11 { grid-area: chart11; }
+#chart12 { grid-area: chart12; }
+#chartAll { grid-area: chartAll; }
+
+.container {
+  display: grid;
+  grid-template-areas:
+    'chart10 chart11'
+    'chart12 chartAll';
+  padding: 40px;
+}
+
+.hehe {
+  position: relative;
+  top: 0;
+  left: 0;
+}

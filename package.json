@@ -1,0 +1,22 @@
+{
+  "name": "climbwise",
+  "version": "1.0.0",
+  "description": "a pet website to analyze climbing grades",
+  "main": "app.py",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chengp3/climbwise.git"
+  },
+  "author": "pat cheng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chengp3/climbwise/issues"
+  },
+  "homepage": "https://github.com/chengp3/climbwise#readme",
+  "dependencies": {
+
+  }
+}

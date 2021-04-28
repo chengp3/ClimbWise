@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background-color: #151515;
+}
+
+header{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 0;
+    margin-bottom: -1rem;
+    
+}
+
+header:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(85, 48, 48, 0.1);
+    z-index: 130;
+}
+
+.bg{
+    position: relative;
+    top: 0px;
+    width: 100%;
+    left: 0;
+    z-index:100
+}
+
+.van{
+    position: absolute;
+    width: 30vw;
+    bottom: 0;
+    right: 10vw;
+    z-index: 108
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    z-index: 150;
+    background: linear-gradient(to bottom, rgba(0,0,0,.4),transparent)
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    position: relative;
+    left: 3rem;
+    top: 3rem;
+}
+
+.logo span {
+    font-weight: 300;
+}
+
+section {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #151515;
+    position: relative;
+    z-index: 131;
+}
+
+.shadow{
+    position: absolute;
+    bottom: 100%;
+    height: 300px;
+    width: 100%;
+    left: 0;
+    z-index: 109;
+    background: linear-gradient(to top, #151515, transparent);
+}
+
+.byline{
+    text-align: center;
+    font-weight: 600;
+    font-size: 3rem;
+    width: 40%;
+    position: absolute;
+    left: 32vw;
+    top: 40%;
+    z-index:1500;
+}
+
+.title{
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: .5rem;
+    position: relative;
+}
+
+.border {
+    position: absolute;
+    width: 65%;
+    height: 2px;
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+    opacity: .5;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#content1 {
+    width: 60%;
+    position: relative;
+    bottom: 2rem
+
+}
+
+#plot1 {
+    width: 60%;
+    position: relative;
+    top: 2rem;
+}
+
+.container2 {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#content2 {
+    width: 30%;
+}
+
+#plot2 {
+    width: 55%;
+}
+
+.container3 {
+    height: 100vh;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+
+#content3 {
+    position: relative;
+    bottom: 2rem;
+}
+
+#plot3 {
+    width: 60%;
+    position: relative;
+    top: 2rem;
+}
+
+.container4 {
+    height: 100vh;
+    display: flex;
+justify-content: center;
+align-items: center;
+overflow:hidden
+}
+
+#referral {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.van2 {
+    width: 5rem;
+}
+
+.translate {
+    position: relative;
+    left: 50vw;
+    padding: 10px;
+}

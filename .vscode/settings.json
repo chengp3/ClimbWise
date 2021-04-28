@@ -1,0 +1,5 @@
+{
+  "python.pythonPath": "C:\\Python39\\python.exe",
+  "json.schemas": [],
+  "emmet.includeLanguages": { "jinja-html": "html" }
+}

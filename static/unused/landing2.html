@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type='text/javascript' src='/static/line.js'></script>
+    <script type='text/javascript' src='/static/pie.js'></script>
+    <script type='text/javascript' src='/static/bar.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <link rel="stylesheet" href="static/main.css" />
+</head>
+<body>
+
+<div class="grid-container">
+  <div class="header">
+    <form class="search" action="/" method="post">
+        <input
+            type="text"
+            class="search_field"
+            placeholder="Mountain Project tick list URL..."
+            name="URL"
+            size=25
+            autofocus
+          />
+        <input class="submit icon transition" alt="submit" type="image" src="static/analyze.png" border="0">
+    </form>
+  </div>
+  <div class="nav">
+    <div class="link-container">
+      <ul><img src="static/pie.png" class="icon transition" onclick='piefunc({{tencounts|tojson}},{{tenlabels|tojson}},{{elecounts|tojson}},{{elelabels|tojson}},{{twelvecounts|tojson}},{{twelvelabels|tojson}},{{allcounts|tojson}},{{alllabels|tojson}})'></ul>
+      <ul><img src="static/line.png" class="icon transition" onclick='linefunc({{datefill|tojson}},{{highGradeList|tojson}},{{recentGradeList|tojson}})'></ul>
+      <ul><img src="static/pyramid.png" class="icon transition" onclick='barfunc({{grades|tojson}},{{freqs|tojson}})'></ul>
+      <script type='text/javascript' src='static/changePos.js'></script>
+      <ul><img src="static/globe.png" class="icon transition hehe" onmouseover="changePos(event)"></ul>
+    </div>
+  </div>
+  <div class="plots introimage">
+    <p class="introtext">Analyze a <br><b>Mountain Project</b><br>
+        Tick List</p>
+  </div>  
+</div>
+
+
+</body>
+</html>

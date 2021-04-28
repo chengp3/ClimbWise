@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <script type='text/javascript' src='/static/line.js'></script>
+        <script type='text/javascript' src='/static/pie.js'></script>
+        <script type='text/javascript' src='/static/bar.js'></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" href="/static/main.css">
+        
+        <link rel="stylesheet" type="text/css" href="/static/ScrollDots.css" />
+        <script type="text/javascript" src="/static/ScrollDots.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav> 
+                <div class="scroll-indicator" id="section00" data-scroll-indicator-title="Welcome">
+                    <h3 class="logo">Climb<span>Wise</span></h3>
+                </div>
+            </nav>
+            <h2 class="byline"><b>Every</b> peak is <br>within reach</h2>
+
+            <img src="/static/wallst.jpg" class="bg" data-speed=".5" alt="Wall Street @ Moab">
+            <img src="/static/van.gif" class="van" data-speed=".35" alt="The Deli">
+        </header>
+
+        <section>
+            <div class="shadow"></div>
+
+            <div class="container line scroll-indicator" id="section01" data-scroll-indicator-title="Evolution">
+                <div id="content1">
+                    <h3 class="title">Evolution
+                        <div class="border"></div>
+                    </h3>
+                    <p>Seasons, injuries, proud achievements</p>
+                </div>
+                <div id="plot1">
+                    <canvas id="chart1"></canvas>
+                    <script type='text/javascript'>linefunc({{datefill|tojson}},{{highGradeList|tojson}},{{recentGradeList|tojson}})</script> 
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container2 pyramid scroll-indicator" id="section02" data-scroll-indicator-title="Mountain">
+                <div id="content2">
+                    <h3 class="title">Mountain of Sends
+                        <div class="border border2"></div>
+                    </h3>
+
+                    <p>Form the foundation for more</p>
+                </div>
+                <div id="plot2">
+                    <canvas id="chart2"></canvas>
+                    <script type='text/javascript'>barfunc({{grades|tojson}},{{freqs|tojson}})</script> 
+                </div>
+        </section>
+
+        <section>
+            <div class="container3 pie scroll-indicator" id="section03" data-scroll-indicator-title="Style">
+                <div id="content3">
+                    <h3 class="title">Keep it "well-rounded"
+                        <div class="border border3"></div>
+                    </h3>
+
+                    <p>Master every technique</p>
+                </div>
+                <div id="plot3">
+                        <canvas id="chart3"></canvas>                        
+                </div>
+            <script type='text/javascript'>piefunc({{allcounts|tojson}},{{alllabels|tojson}})</script> 
+            </div>
+        </section>
+
+        <section>
+            <div class="container4 scroll-indicator" id="section04" data-scroll-indicator-title="Say hello">
+                <img src="/static/van2.gif" class="van2 translate" alt="Vroom vroom">
+                <p class="referral translate"><a href="https://github.com/chengp3">github</a></p>
+            </div>
+            <style>
+                a:link, a:visited {color: white;}
+            </style>
+        </section>
+
+
+        <script type="text/javascript">
+        const bg = document.querySelector('.bg');
+        const van = document.querySelector('.van');
+        const shadow = document.querySelector('.shadow')
+        
+        const line = document.querySelector('.line')
+        const border = document.querySelector('.border')
+        const lineY = line.getBoundingClientRect().top;
+
+        const pyr = document.querySelector('.pyramid')
+        const border2 = document.querySelector('.border2')
+        const pyrY = pyr.getBoundingClientRect().top;
+
+        const pie =  document.querySelector('.pie')
+        const border3 = document.querySelector('.border3')
+        const pieY = pie.getBoundingClientRect().top;
+
+        const van2 = document.querySelector('.van2')
+        const van2Y = van2.getBoundingClientRect().top;
+        const ref = document.querySelector('.referral')
+
+        const byline = document.querySelector('.byline')
+        const bylineY = byline.getBoundingClientRect().top;
+
+        const fadeDistance = 350;
+
+        window.addEventListener('scroll', ()=> {
+            const scroll = window.pageYOffset;
+            const speed = bg.dataset.speed;
+            const speed2 = van.dataset.speed;
+
+            if (scroll < bylineY) {
+                byline.style.opacity = (bylineY-scroll)/bylineY;
+                van.style.opacity = (bylineY-scroll+100)/bylineY;
+            }
+
+            bg.style.transform = `translateY(${scroll * speed}px)`;
+            van.style.transform = `translateX(${scroll * speed2}px)`;
+            shadow.style.height = `${scroll * .5 + 300}px`;
+
+            line.style.opacity = (scroll-lineY + fadeDistance) / fadeDistance;
+            border.style.width = `${Math.min((scroll-lineY + fadeDistance) * 120 / fadeDistance, 100)}%`;
+
+            pyr.style.opacity = (scroll-pyrY + fadeDistance) / fadeDistance
+            border2.style.width = `${Math.min((scroll-pyrY + fadeDistance) * 90 / fadeDistance, 90)}%`;
+
+            pie.style.opacity = (scroll-pieY + fadeDistance) / fadeDistance
+            border3.style.width = `${Math.min((scroll-pieY + fadeDistance) * 100 / fadeDistance, 100)}%`;
+
+            if (scroll > van2Y - window.innerHeight) {
+                const vanScroll = -(scroll-van2Y+window.innerHeight)*220/window.innerHeight
+                van2.style.transform = `translateX(${vanScroll}vw`;
+                ref.style.transform = `translateX(${Math.max(-55,vanScroll)}vw`;
+            }
+        }
+        
+        )
+        </script> 
+        <script>
+            easyScrollDots({
+                'fixedNav': false,
+                'fixedNavId': '',
+                'fixedNavUpward': false,
+                'offset': 0
+            });
+        </script>
+    </body>
+
+</html>
