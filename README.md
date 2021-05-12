@@ -14,6 +14,6 @@ Route data (SQL) -> Tick data (also SQL) -> Python -> Flask -> HTML/CSS/Bootstra
 
 # The site
 
-pcheng3.pythonanywhere.com
+<a href="pcheng3.pythonanywhere.com">Here</a>
 
 The site has capability to run anyone's tick data but MP has user data download throttled. So this is short circuited at the moment. Click through to see my buddy's climbing charts...
